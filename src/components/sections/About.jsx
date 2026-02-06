@@ -17,10 +17,14 @@ const About = () => {
         </SectionTitle>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Image/Avatar Placeholder */}
+          {/* Profile Image */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 bg-gradient-to-br from-primary-400 to-blue-500 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
-              {personalInfo.name.split(' ').map(n => n[0]).join('')}
+            <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-100">
+              <img 
+                src="/profile.jpg" 
+                alt={personalInfo.name}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
