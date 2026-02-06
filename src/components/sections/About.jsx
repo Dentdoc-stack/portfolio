@@ -19,11 +19,15 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Profile Image */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-100">
+            <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-100 bg-gradient-to-br from-primary-400 to-blue-500 flex items-center justify-center">
               <img 
                 src="/profile.jpg" 
                 alt={personalInfo.name}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = `<span class="text-white text-6xl font-bold">${personalInfo.name.split(' ').map(n => n[0]).join('')}</span>`;
+                }}
               />
             </div>
           </div>
